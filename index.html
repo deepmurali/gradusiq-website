@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GradusIQ — The academic advisor every student is actually assigned to</title>
+<meta name="description" content="GradusIQ reads a student's real transcript and career goals, then tells them which roles fit, what's missing, and where the market is moving before they graduate into it.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="wordmark" href="#top">
+      <span class="diamond" aria-hidden="true"></span>
+      GRADUSIQ
+    </a>
+    <nav class="topnav" aria-label="Primary">
+      <a href="#product">Product</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#team">Team</a>
+      <a href="#roadmap">Roadmap</a>
+    </nav>
+    <a class="topbar-cta" href="https://gqr.sh/eZsT" target="_blank" rel="noopener">Live demo <span aria-hidden="true">&rarr;</span></a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ── Hero ───────────────────────────────────────────────── -->
+  <section class="hero" id="top">
+    <div class="wrap">
+      <p class="eyebrow reveal">First Place — Dallas AI Summer Program</p>
+
+      <h1 class="reveal">The academic advisor every student is <em>actually</em> assigned to.</h1>
+
+      <p class="lede reveal">
+        GradusIQ reads a student's real transcript and career goals, then tells them
+        — with evidence, not platitudes — which roles fit, what's missing, and where
+        the market is moving before they graduate into it.
+      </p>
+
+      <div class="hero-actions reveal">
+        <a class="btn btn-primary" href="https://gqr.sh/eZsT" target="_blank" rel="noopener">View live demo</a>
+        <p class="pilot"><span class="check" aria-hidden="true">&#10003;</span> Piloting at Texas A&amp;M and SMU</p>
+      </div>
+
+      <!-- Signature element: feature transcript -->
+      <div class="transcript reveal" role="table" aria-label="GradusIQ feature transcript">
+        <div class="transcript-head" role="row">
+          <div class="transcript-title" role="columnheader">GradusIQ — Feature Transcript</div>
+          <div class="transcript-meta" role="columnheader">Student: J. Reyes &middot; GPA 3.00 &middot; TAMU</div>
+        </div>
+
+        <div class="transcript-row" role="row">
+          <div class="t-code" role="cell">FIT 301</div>
+          <div class="t-name" role="cell">Career Role Matching</div>
+          <div class="t-desc" role="cell">Major, interests &amp; target roles against O*NET + live postings</div>
+          <div class="t-status" role="cell"><span class="run">RUN</span> 3–5 matches</div>
+        </div>
+
+        <div class="transcript-row" role="row">
+          <div class="t-code" role="cell">GAP 302</div>
+          <div class="t-name" role="cell">Readiness Score</div>
+          <div class="t-desc" role="cell">Skills &amp; certs measured against target-role requirements</div>
+          <div class="t-status" role="cell"><span class="run">RUN</span> must-have gaps</div>
+        </div>
+
+        <div class="transcript-row" role="row">
+          <div class="t-code" role="cell">SHIFT 303</div>
+          <div class="t-name" role="cell">Market Trend Guidance</div>
+          <div class="t-desc" role="cell">How the target role family is shifting with AI adoption</div>
+          <div class="t-status" role="cell"><span class="run">RUN</span> adjacent paths</div>
+        </div>
+
+        <div class="transcript-row" role="row">
+          <div class="t-code" role="cell">PCA 304</div>
+          <div class="t-name" role="cell">Professor Comment Analyzer</div>
+          <div class="t-desc" role="cell">Patterns across instructor feedback, term over term</div>
+          <div class="t-status" role="cell"><span class="run">RUN</span> theme summary</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Problem / Solution ─────────────────────────────────── -->
+  <section class="section" id="product">
+    <div class="wrap">
+      <p class="eyebrow reveal">The problem</p>
+      <h2 class="reveal">Career advising doesn't scale. Data does.</h2>
+
+      <div class="two-col">
+        <article class="card reveal">
+          <p class="card-label">Today</p>
+          <p class="card-body">
+            Career centers are understaffed relative to enrollment, advice is generic
+            and role-agnostic, and students don't find out they're missing a required
+            skill or certification until it's too late to fix before graduation.
+          </p>
+        </article>
+
+        <article class="card card-accent reveal">
+          <p class="card-label">With GradusIQ</p>
+          <p class="card-body">
+            A student's Supabase-backed academic and career profile feeds four
+            purpose-built AI features that turn transcripts and goals into a specific,
+            evidence-grounded plan — regenerated every time new grades or job-market
+            data lands.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Four features ──────────────────────────────────────── -->
+  <section class="section section-tight">
+    <div class="wrap">
+      <p class="eyebrow reveal">The engine</p>
+      <h2 class="reveal">Four features, one profile.</h2>
+
+      <div class="features">
+        <article class="feature reveal">
+          <p class="f-code">FIT</p>
+          <h3>Career Role Matching</h3>
+          <p>
+            Matches major, interests, and stated goals against O*NET occupational data
+            and live DFW job postings to surface 3–5 roles with a specific "why this
+            fits you" rationale — not a generic list of job titles.
+          </p>
+        </article>
+
+        <article class="feature reveal">
+          <p class="f-code">GAP</p>
+          <h3>Readiness Scoring</h3>
+          <p>
+            Scores a student's current skills, coursework, and certifications against
+            what their target role actually requires, then separates must-have gaps
+            from nice-to-have ones with a path to close each.
+          </p>
+        </article>
+
+        <article class="feature reveal">
+          <p class="f-code">SHIFT</p>
+          <h3>Market Trend Guidance</h3>
+          <p>
+            Tracks how a student's target role family is evolving under AI adoption,
+            surfaces adjacent paths worth considering, and coaches how to talk about
+            AI fluency in interviews.
+          </p>
+        </article>
+
+        <article class="feature reveal">
+          <p class="f-code">PCA</p>
+          <h3>Professor Comment Analyzer</h3>
+          <p>
+            Finds the patterns hiding across a semester of scattered instructor
+            feedback, so students see the theme instead of re-reading twelve separate
+            comments.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Architecture ───────────────────────────────────────── -->
+  <section class="section section-alt" id="architecture">
+    <div class="wrap">
+      <p class="eyebrow reveal">Under the hood</p>
+      <h2 class="reveal">Built like production, not a hackathon demo</h2>
+
+      <p class="note reveal">
+        A full security audit is already closed out — cross-student data exposure,
+        public JSON leaks, and unkeyed rate limits are fixed.
+      </p>
+
+      <ol class="arch">
+        <li class="reveal">
+          <span class="num">01</span>
+          <div>
+            <h3>Multi-institution schema</h3>
+            <p>Ten Supabase tables covering terms, courses, and career profiles across
+               institutions, with row-level security proven live in production.</p>
+          </div>
+        </li>
+        <li class="reveal">
+          <span class="num">02</span>
+          <div>
+            <h3>GPA, always derived</h3>
+            <p>Never stored, always calculated from raw grade records — so it's never
+               stale and never duplicated.</p>
+          </div>
+        </li>
+        <li class="reveal">
+          <span class="num">03</span>
+          <div>
+            <h3>Session-scoped API</h3>
+            <p>FIT, GAP, SHIFT, and chat all resolve from bearer tokens, replacing
+               earlier static-file reads that couldn't be trusted at scale.</p>
+          </div>
+        </li>
+        <li class="reveal">
+          <span class="num">04</span>
+          <div>
+            <h3>Live role-research agent</h3>
+            <p>A Tavily-backed research agent grounds career guidance in current market
+               data instead of a frozen dataset.</p>
+          </div>
+        </li>
+      </ol>
+
+      <ul class="stack reveal" aria-label="Technology stack">
+        <li>React + Vite</li>
+        <li>FastAPI</li>
+        <li>Supabase &middot; Postgres</li>
+        <li>DeepSeek R1 via OpenRouter</li>
+        <li>O*NET dataset</li>
+        <li>Tavily search</li>
+        <li>Vercel</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── Team ───────────────────────────────────────────────── -->
+  <section class="section" id="team">
+    <div class="wrap">
+      <p class="eyebrow reveal">Who's building it</p>
+      <h2 class="reveal">Team</h2>
+
+      <div class="team">
+        <article class="member reveal">
+          <h3>Deepak</h3>
+          <p class="role">Founder &middot; AI Engine &amp; Product</p>
+          <p>Primary architect and solo builder of the AI engine, data layer, and
+             frontend at Texas A&amp;M.</p>
+        </article>
+
+        <article class="member reveal">
+          <h3>Noah Bonaguidi</h3>
+          <p class="role">Frontend &amp; Deployment</p>
+          <p>Owns the repo and ships releases to Vercel.</p>
+        </article>
+
+        <article class="member reveal">
+          <h3>Kasheia Williams</h3>
+          <p class="role">Team</p>
+          <p>Contributing to the GradusIQ build.</p>
+        </article>
+
+        <article class="member reveal">
+          <h3>Abhishek Rai &amp; Ganesh Gurudu</h3>
+          <p class="role">Mentors</p>
+          <p>Advising the build; Abhishek contributed the O*NET dataset integration.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Roadmap ────────────────────────────────────────────── -->
+  <section class="section section-alt" id="roadmap">
+    <div class="wrap">
+      <p class="eyebrow reveal">What's next</p>
+      <h2 class="reveal">Roadmap</h2>
+
+      <ul class="roadmap">
+        <li class="reveal">
+          <span class="phase phase-now">In progress</span>
+          <div>
+            <h3>TAMU + SMU course catalogs</h3>
+            <p>Direct import and scraper work underway to ground course recommendations
+               in real, current offerings.</p>
+          </div>
+        </li>
+        <li class="reveal">
+          <span class="phase">Next</span>
+          <div>
+            <h3>Live Canvas integration</h3>
+            <p>Replacing mocked academic data with a real LMS connection, unlocking the
+               Professor Comment Analyzer for real students.</p>
+          </div>
+        </li>
+        <li class="reveal">
+          <span class="phase">Next</span>
+          <div>
+            <h3>Persistent chat &amp; full orchestration</h3>
+            <p>One trigger that runs every feature together and keeps context across a
+               student's sessions.</p>
+          </div>
+        </li>
+        <li class="reveal">
+          <span class="phase">Later</span>
+          <div>
+            <h3>High school pilot</h3>
+            <p>Extending the same readiness and guidance model earlier in a student's
+               academic path.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── Footer CTA ─────────────────────────────────────────── -->
+  <section class="cta">
+    <div class="wrap">
+      <h2 class="reveal">Watch a real student's transcript become a real plan.</h2>
+      <p class="reveal">
+        Jordan Reyes, TAMU, 3.00 GPA — walk through FIT, GAP, SHIFT, and the Professor
+        Comment Analyzer live.
+      </p>
+      <p class="reveal">
+        <a class="btn btn-primary" href="https://gqr.sh/eZsT" target="_blank" rel="noopener">Open the live demo</a>
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <span>GradusIQ — formerly Campus IQ</span>
+    <span>Texas A&amp;M University &middot; SMU</span>
+    <span>First Place, Dallas AI Summer Program</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
