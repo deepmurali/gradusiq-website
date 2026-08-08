@@ -193,8 +193,10 @@
           <span class="num">01</span>
           <div>
             <h3>Multi-institution schema</h3>
-            <p>Ten Supabase tables covering terms, courses, and career profiles across
-               institutions, with row-level security proven live in production.</p>
+            <p>A single schema handles multiple institutions' academic terms, courses,
+               and career profiles, with row-level access control proven live in
+               production — one student's data is never reachable from another's
+               session.</p>
           </div>
         </li>
         <li class="reveal">
@@ -209,28 +211,28 @@
           <span class="num">03</span>
           <div>
             <h3>Session-scoped API</h3>
-            <p>FIT, GAP, SHIFT, and chat all resolve from bearer tokens, replacing
-               earlier static-file reads that couldn't be trusted at scale.</p>
+            <p>Every feature — role matching, readiness scoring, market guidance, and
+               chat — resolves from an authenticated session, not a static file or a
+               guessable URL.</p>
           </div>
         </li>
         <li class="reveal">
           <span class="num">04</span>
           <div>
-            <h3>Live role-research agent</h3>
-            <p>A Tavily-backed research agent grounds career guidance in current market
-               data instead of a frozen dataset.</p>
+            <h3>Live market-research agent</h3>
+            <p>An autonomous research agent pulls current job-market signal in real
+               time, so guidance reflects this month's market — not a dataset frozen
+               at launch.</p>
           </div>
         </li>
       </ol>
 
-      <ul class="stack reveal" aria-label="Technology stack">
-        <li>React + Vite</li>
-        <li>FastAPI</li>
-        <li>Supabase &middot; Postgres</li>
-        <li>DeepSeek R1 via OpenRouter</li>
-        <li>O*NET dataset</li>
-        <li>Tavily search</li>
-        <li>Vercel</li>
+      <ul class="stack reveal" aria-label="Platform capabilities">
+        <li>Row-level data isolation</li>
+        <li>Real-time market data</li>
+        <li>Multi-institution ready</li>
+        <li>Cloud-native, zero-downtime deploys</li>
+        <li>Federal occupational data</li>
       </ul>
     </div>
   </section>
