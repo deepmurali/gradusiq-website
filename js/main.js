@@ -1,12 +1,68 @@
-/* GradusIQ landing page — scroll reveal.
+/* GradusIQ landing page — hero typewriter + scroll reveal.
    No dependencies. Degrades to fully visible content if anything is missing. */
+
+var GRADUSIQ_REDUCED_MOTION =
+  window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* --- Hero typewriter ------------------------------------------------------
+   Cycles three standalone headlines: hold, erase, type the next, repeat.
+   The markup already renders phrase 0, so we start in the hold state and the
+   page never flashes an empty headline. */
+
+(function () {
+  'use strict';
+
+  var PHRASES = [
+    'Every student’s personal advisor.',
+    'Support from college to career.',
+    'AI companion for your future.'
+  ];
+
+  var TYPE_MS  = 40;    // per character, typing
+  var ERASE_MS = 25;    // per character, erasing
+  var HOLD_MS  = 1800;  // full phrase held on screen
+
+  if (GRADUSIQ_REDUCED_MOTION) return;
+
+  var el = document.querySelector('.typer-text');
+  if (!el) return;
+
+  document.documentElement.classList.add('js-typing');
+
+  var index = 0;
+  var chars = PHRASES[0].length;
+
+  function erase() {
+    if (chars > 0) {
+      chars--;
+      el.textContent = PHRASES[index].slice(0, chars);
+      setTimeout(erase, ERASE_MS);
+      return;
+    }
+    index = (index + 1) % PHRASES.length;
+    setTimeout(type, TYPE_MS);
+  }
+
+  function type() {
+    if (chars < PHRASES[index].length) {
+      chars++;
+      el.textContent = PHRASES[index].slice(0, chars);
+      setTimeout(type, TYPE_MS);
+      return;
+    }
+    setTimeout(erase, HOLD_MS);
+  }
+
+  setTimeout(erase, HOLD_MS);
+})();
+
+/* --- Scroll reveal -------------------------------------------------------- */
 
 (function () {
   'use strict';
 
   var root = document.documentElement;
-  var reduced = window.matchMedia &&
-                window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reduced = GRADUSIQ_REDUCED_MOTION;
 
   // Bail out before hiding anything if we can't animate or can't observe.
   if (reduced || !('IntersectionObserver' in window)) return;

@@ -1,7 +1,7 @@
 /* ==========================================================================
    GradusIQ — pitch / landing page
    Editorial, transcript-inspired. Hairline rules, no rounded corners,
-   one restrained accent (gold).
+   two accents: gold (labels, codes, marks) and coral (primary action).
    ========================================================================== */
 
 /* --- Tokens --------------------------------------------------------------- */
@@ -11,8 +11,23 @@
   --paper-2:   #EFEEE8;
   --ink:       #14171F;
   --navy:      #1B2A4A;
-  --gold:      #B8912A;
-  --gold-soft: #EFE3C0;
+  /* Gold is split by job. --gold is the vibrant mark colour, used only for
+     shapes and rules where no contrast minimum applies. Any gold that is
+     actually read — eyebrows, course codes, role labels — uses --gold-text,
+     which clears 4.5:1 on paper, paper-2, and the white transcript rows.
+     (#8A6A12 passes on paper at 4.71:1 but only reaches 4.35:1 on paper-2,
+     where the Architecture and Roadmap eyebrows sit; this is two steps
+     deeper so every surface passes.) */
+  --gold:      #D9A62B;
+  --gold-text: #82640F;
+  --gold-soft: #F5DFA0;
+  --coral:     #E1523F;
+  /* Button fill only. #E1523F behind --paper text lands at 3.6:1, under the
+     4.5:1 floor for 15px text; this darker step reads as the same coral and
+     clears it at 4.6:1. --coral itself stays for the cursor and hairline marks,
+     where contrast minimums don't apply. */
+  --coral-deep: #C94028;
+  --coral-deeper: #AE3520;
   --rule:      #D8D6CC;
   --muted:     #5B5F6B;
 
@@ -92,7 +107,7 @@ button:focus-visible {
   font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--gold-text);
   margin-bottom: 20px;
 }
 
@@ -193,6 +208,40 @@ h3 {
 
 .hero { padding: 108px 0 104px; }
 
+/* Typewriter headline.
+   All three phrases are stacked in a single grid cell — the ghosts are laid
+   out but not painted, so the cell is always as tall as the tallest phrase at
+   the current width. Nothing below the H1 moves as phrases cycle, including
+   when a phrase wraps to an extra line on narrow screens. */
+.typer { display: grid; }
+.typer > * { grid-area: 1 / 1; }
+.typer-ghost { visibility: hidden; }
+
+.typer-cursor {
+  display: none;
+  width: 3px;
+  height: 0.74em;
+  margin-left: 0.07em;
+  background: var(--coral);
+  vertical-align: baseline;
+  transform: translateY(0.04em);
+}
+
+/* The cursor only exists while JS is actually typing. */
+.js-typing .typer-cursor {
+  display: inline-block;
+  animation: typer-blink 1.05s steps(1, end) infinite;
+}
+
+@keyframes typer-blink {
+  0%, 49%   { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .typer-cursor, .js-typing .typer-cursor { display: none; animation: none; }
+}
+
 .lede {
   margin-top: 26px;
   max-width: 58ch;
@@ -221,17 +270,20 @@ h3 {
 }
 
 .btn-primary {
-  background: var(--navy);
+  background: var(--coral-deep);
   color: var(--paper);
-  border-color: var(--navy);
+  border-color: var(--coral-deep);
 }
-.btn-primary:hover { background: #24365d; }
+.btn-primary:hover {
+  background: var(--coral-deeper);
+  border-color: var(--coral-deeper);
+}
 
 .pilot {
   font-size: 14px;
   color: var(--muted);
 }
-.check { color: var(--gold); font-weight: 700; margin-right: 4px; }
+.check { color: var(--gold-text); font-weight: 700; margin-right: 4px; }
 
 /* --- Transcript panel ----------------------------------------------------- */
 
@@ -280,7 +332,7 @@ h3 {
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.06em;
-  color: var(--gold);
+  color: var(--gold-text);
   white-space: nowrap;
 }
 
@@ -331,7 +383,7 @@ h3 {
   padding-bottom: 12px;
   border-bottom: 1px solid var(--rule);
 }
-.card-accent .card-label { color: var(--gold); }
+.card-accent .card-label { color: var(--gold-text); }
 
 .card-body { font-size: 15.5px; color: var(--muted); line-height: 1.68; }
 
@@ -350,18 +402,21 @@ h3 {
 }
 .feature:nth-child(even) { padding-left: 40px; border-left: 1px solid var(--rule); }
 
-.f-code {
+.feature h3 { margin-bottom: 10px; }
+
+.feature p { font-size: 15.5px; color: var(--muted); line-height: 1.68; }
+
+/* Scoped to out-specify `.feature p` above, which would otherwise win on
+   font-size and color and flatten the code into body copy. */
+.feature .f-code {
   font-family: var(--mono);
   font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.16em;
-  color: var(--gold);
+  line-height: 1.65;
+  color: var(--gold-text);
   margin-bottom: 10px;
 }
-
-.feature h3 { margin-bottom: 10px; }
-
-.feature p { font-size: 15.5px; color: var(--muted); line-height: 1.68; }
 
 /* --- Architecture --------------------------------------------------------- */
 
@@ -389,7 +444,7 @@ h3 {
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.08em;
-  color: var(--gold);
+  color: var(--gold-text);
   padding-top: 3px;
 }
 
@@ -436,7 +491,7 @@ h3 {
   font-size: 10.5px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--gold-text);
   margin-bottom: 12px;
 }
 
